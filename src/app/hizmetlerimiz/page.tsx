@@ -54,11 +54,6 @@ const services = [
   },
 ]
 
-const valuePoints = [
-  "Doğru Konumlandırma",
-  "Güçlü Sunum",
-  "Sürdürülebilir Değer",
-]
 
 export default function HizmetlerimizPage() {
   return (
@@ -228,71 +223,7 @@ export default function HizmetlerimizPage() {
           </div>
         </section>
 
-        {/* ── 4. DEĞER BÖLÜMÜ ── */}
-        <section className="relative overflow-hidden" style={{ backgroundColor: "#111317" }}>
-          <div
-            className="absolute inset-0 pointer-events-none"
-            aria-hidden="true"
-            style={{
-              opacity: 0.022,
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-              backgroundSize: "80px 80px",
-            }}
-          />
-          <div
-            className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10"
-            style={{ paddingTop: "clamp(44px, 5.5vw, 72px)", paddingBottom: "clamp(44px, 5.5vw, 72px)" }}
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-start" style={{ marginBottom: 40 }}>
-              <h2
-                className="font-serif font-light"
-                style={{ fontSize: "clamp(1.5rem, 2.6vw, 2.2rem)", color: "#F7F5F1", lineHeight: 1.18, letterSpacing: "-0.012em" }}
-              >
-                Her Hizmet Aynı Hedefe
-                <br />
-                Bağlanır: Değer Üretmek
-              </h2>
-              <p
-                className="font-sans font-light"
-                style={{ fontSize: 14, lineHeight: 1.92, color: "rgba(247,245,241,0.44)", alignSelf: "end" }}
-              >
-                CaveArts için hizmet alanları birbirinden kopuk başlıklar değildir.
-                Proje geliştirme, gayrimenkul, eğitim, franchise, danışmanlık ve yatırım
-                modeli çalışmaları; projenin daha doğru konumlanması, daha güçlü
-                sunulması ve uzun vadede değer üretmesi için birlikte değerlendirilir.
-              </p>
-            </div>
-
-            {/* 3 vurgu */}
-            <div
-              className="grid grid-cols-1 md:grid-cols-3"
-              style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
-            >
-              {valuePoints.map((point, i) => (
-                <div
-                  key={point}
-                  style={{
-                    borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.07)" : "none",
-                    paddingTop: 20,
-                    paddingBottom: 4,
-                    paddingLeft: i > 0 ? "clamp(20px, 3vw, 40px)" : 0,
-                    paddingRight: i < valuePoints.length - 1 ? "clamp(20px, 3vw, 40px)" : 0,
-                  }}
-                >
-                  <span
-                    className="font-sans font-medium uppercase"
-                    style={{ fontSize: "9px", letterSpacing: "0.32em", color: "rgba(247,245,241,0.32)" }}
-                  >
-                    {point}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── 5. CTA ── */}
+        {/* ── 4. CTA ── */}
         <PageCTA
           title="Projeniz İçin Doğru Hizmet Yapısını Birlikte Belirleyelim"
           description="Proje, yatırım, gayrimenkul, eğitim veya franchise süreçleriniz için CaveArts ekibiyle iletişime geçebilirsiniz."

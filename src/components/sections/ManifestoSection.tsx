@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 export default function ManifestoSection() {
@@ -100,13 +99,21 @@ export default function ManifestoSection() {
               className="relative w-full overflow-hidden"
               style={{ aspectRatio: "16 / 10", borderRadius: "2px" }}
             >
-              <Image
-                src="/İmage/website-cavearts-mainpage.jpg"
-                alt="CaveArts — Değer Üreten Projeler"
-                fill
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                style={{ objectFit: "cover", objectPosition: "center" }}
-                priority
+              {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+              <video
+                src="/video/cavearts-intro-video.mp4"
+                poster="/İmage/video_kapak.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
               />
             </div>
           </div>

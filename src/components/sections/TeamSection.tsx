@@ -114,12 +114,6 @@ export default function TeamSection() {
               >
                 {member.title}
               </p>
-              <p
-                className="font-sans font-light"
-                style={{ fontSize: 13, lineHeight: 1.9, color: "rgba(17,17,17,0.5)" }}
-              >
-                {member.bio}
-              </p>
             </div>
           ))}
         </div>

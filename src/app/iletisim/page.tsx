@@ -49,23 +49,6 @@ const contactInfo = [
   { label: "Lokasyon", value: "İstanbul, Türkiye", href: null },
 ]
 
-const processSteps = [
-  {
-    num: "01",
-    title: "Talebiniz Alınır",
-    desc: "Form üzerinden ilettiğiniz bilgiler CaveArts ekibi tarafından incelenir.",
-  },
-  {
-    num: "02",
-    title: "Uygun Alan Belirlenir",
-    desc: "İlgilendiğiniz proje, yatırım modeli veya iş birliği başlığı netleştirilir.",
-  },
-  {
-    num: "03",
-    title: "Sizinle İletişime Geçilir",
-    desc: "Danışman ekibimiz, süreç hakkında detaylı bilgi vermek için sizinle iletişime geçer.",
-  },
-]
 
 export default function IletisimPage() {
   return (
@@ -702,75 +685,6 @@ export default function IletisimPage() {
                   </div>
                 </form>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── 3. BAŞVURU SÜRECİ ───────────────────────────────── */}
-        <section style={{ backgroundColor: "#FFFFFF" }}>
-          <div
-            className="max-w-7xl mx-auto px-6 lg:px-10"
-            style={{
-              paddingTop: "clamp(40px, 5.5vw, 68px)",
-              paddingBottom: "clamp(40px, 5.5vw, 68px)",
-            }}
-          >
-            <h2
-              className="font-serif font-light"
-              style={{
-                fontSize: "clamp(1.4rem, 2.4vw, 2.1rem)",
-                color: "#111111",
-                lineHeight: 1.1,
-                letterSpacing: "-0.015em",
-                marginBottom: 32,
-              }}
-            >
-              Başvurunuz Nasıl Değerlendirilir?
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
-              {processSteps.map((step, i) => (
-                <div
-                  key={step.num}
-                  style={{
-                    borderTop: "1px solid rgba(17,17,17,0.1)",
-                    paddingTop: 24,
-                    paddingBottom: 24,
-                    paddingRight: i < processSteps.length - 1 ? "clamp(20px, 4vw, 60px)" : 0,
-                    borderLeft:
-                      i > 0 ? "1px solid rgba(17,17,17,0.07)" : "none",
-                    paddingLeft: i > 0 ? "clamp(20px, 4vw, 60px)" : 0,
-                  }}
-                >
-                  <p
-                    className="font-sans"
-                    style={{
-                      fontSize: "8.5px",
-                      letterSpacing: "0.22em",
-                      color: "#C9A86C",
-                      marginBottom: 18,
-                    }}
-                  >
-                    {step.num}
-                  </p>
-                  <h3
-                    className="font-sans font-medium"
-                    style={{
-                      fontSize: "13.5px",
-                      color: "#111111",
-                      marginBottom: 10,
-                      letterSpacing: "0.01em",
-                    }}
-                  >
-                    {step.title}
-                  </h3>
-                  <p
-                    className="font-sans font-light"
-                    style={{ fontSize: "12.5px", color: "rgba(17,17,17,0.48)", lineHeight: 1.84 }}
-                  >
-                    {step.desc}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
         </section>

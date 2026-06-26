@@ -17,24 +17,6 @@ const sehirler = [
   { sehir: "Antalya", detay: "Turizm ve konut sentezini bir arada sunan Lara, Belek ve çevre aksları." },
 ]
 
-const ozellikler = [
-  {
-    baslik: "Lokasyon Odaklı Seçim",
-    aciklama: "Her proje, bölgesel gelişim potansiyeli ve yatırım dinamikleri gözetilerek seçilir.",
-  },
-  {
-    baslik: "Güçlü Yatırım Modeli",
-    aciklama: "Hemen tapu, taksitli ödeme ve topraktan giriş seçenekleriyle planlı yatırım yapısı.",
-  },
-  {
-    baslik: "Şeffaf Süreç",
-    aciklama: "Danışmanlıktan tapuya kadar her adım şeffaf ve yatırımcı odaklı biçimde yönetilir.",
-  },
-  {
-    baslik: "Profesyonel Organizasyon",
-    aciklama: "Proje geliştirme, pazarlama ve satış süreçleri tek çatı altında profesyonelce yürütülür.",
-  },
-]
 
 export default function TurkiyeProjelerPage() {
   return (
@@ -133,44 +115,6 @@ export default function TurkiyeProjelerPage() {
                   </p>
                   <p className="font-sans font-light" style={{ fontSize: 13.5, color: "rgba(17,17,17,0.52)", lineHeight: 1.78 }}>
                     {s.detay}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Yaklaşım */}
-        <section style={{ backgroundColor: "#FFFFFF" }}>
-          <div
-            className="max-w-7xl mx-auto px-6 lg:px-10"
-            style={{ paddingTop: "clamp(40px, 5vw, 64px)", paddingBottom: "clamp(44px, 6vw, 72px)" }}
-          >
-            <h2
-              className="font-serif font-light"
-              style={{ fontSize: "clamp(1.3rem, 2.4vw, 2.1rem)", color: "#111111", letterSpacing: "-0.018em", lineHeight: 1.1, marginBottom: 44 }}
-            >
-              CaveArts Yaklaşımı
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-              {ozellikler.map((item, i) => (
-                <div
-                  key={item.baslik}
-                  style={{
-                    borderTop: "1px solid rgba(17,17,17,0.1)",
-                    paddingTop: 28,
-                    paddingBottom: 28,
-                    paddingRight: i < ozellikler.length - 1 ? "clamp(16px, 3vw, 40px)" : 0,
-                  }}
-                >
-                  <p className="font-sans" style={{ fontSize: "8.5px", letterSpacing: "0.22em", color: "#C9A86C", marginBottom: 16 }}>
-                    {String(i + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="font-sans font-medium" style={{ fontSize: 14, color: "#111111", marginBottom: 10 }}>
-                    {item.baslik}
-                  </h3>
-                  <p className="font-sans font-light" style={{ fontSize: 12.5, color: "rgba(17,17,17,0.48)", lineHeight: 1.82 }}>
-                    {item.aciklama}
                   </p>
                 </div>
               ))}
