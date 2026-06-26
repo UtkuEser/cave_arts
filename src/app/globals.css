@@ -1,0 +1,340 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #060A14;
+  --color-navy-900: #080C18;
+  --color-navy-800: #0D1425;
+  --color-warm-white: #F7F5F1;
+  --color-secondary-bg: #EDEBE8;
+  --color-stone: #D8D2C8;
+  --color-off-white: #EEECEA;
+  --color-gold: #C9A86C;
+  --color-gold-dark: #B08040;
+  --color-gold-light: #D4BC88;
+  --color-ink: #111111;
+  --color-body: #4A4845;
+  --color-muted: #8C8A86;
+
+  /* ── Marka revizyonu 2026-06-16: premium proje geliştirme yön sistemi ── */
+  --color-cave-black: #0E0E0E;
+  --color-cave-anthracite: #1A1A1A;
+  --color-cave-white: #FFFFFF;
+  --color-cave-light-gray: #F4F4F4;
+  --color-cave-matte-gold: #C8A96A;
+  --color-cave-bronze: #9C7A42;
+
+  --font-serif: var(--font-manrope);
+  --font-sans: var(--font-inter);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.07); }
+}
+
+@keyframes slideProgress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@keyframes slideContentIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #F7F5F1;
+  color: #4A4845;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Button utilities ── */
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #111111;
+  color: #F7F5F1;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  padding: 16px 36px;
+  transition: background-color 0.3s;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.btn-dark:hover { background-color: #080C18; }
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #C9A86C;
+  color: #111111;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  padding: 16px 36px;
+  transition: background-color 0.3s;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.btn-gold:hover { background-color: #B08040; }
+
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.65);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  padding: 16px 36px;
+  transition: border-color 0.3s, color 0.3s;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.btn-outline-white:hover {
+  border-color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.9);
+}
+
+.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(201,168,108,0.55);
+  color: #C9A86C;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  padding: 16px 36px;
+  transition: border-color 0.3s, color 0.3s;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.btn-outline-gold:hover {
+  border-color: rgba(201,168,108,0.9);
+  color: #B08040;
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(17,17,17,0.22);
+  color: #111111;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  padding: 10px 20px;
+  transition: border-color 0.3s, background-color 0.3s;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.btn-outline-dark:hover {
+  border-color: rgba(17,17,17,0.6);
+  background-color: rgba(17,17,17,0.04);
+}
+.btn-outline-dark svg { transition: transform 0.3s; }
+.btn-outline-dark:hover svg { transform: translateX(4px); }
+
+/* ── Link underline utilities ── */
+.link-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(17,17,17,0.2);
+  color: #111111;
+  transition: color 0.3s, border-color 0.3s;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.link-dark:hover { color: #C9A86C; border-bottom-color: rgba(201,168,108,0.5); }
+.link-dark svg { transition: transform 0.3s; }
+.link-dark:hover svg { transform: translateX(4px); }
+
+.link-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  color: #C9A86C;
+  transition: color 0.3s;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.link-gold:hover { color: #B08040; }
+.link-gold svg { transition: transform 0.3s; }
+.link-gold:hover svg { transform: translateX(4px); }
+
+/* ── Nav link (header) — açık zemin, dark ── */
+.nav-link {
+  color: rgba(17,17,17,0.45);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.nav-link:hover { color: #111111; }
+
+/* ── Footer links ── */
+.footer-link {
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  font-weight: 300;
+  transition: color 0.2s;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.footer-link:hover { color: rgba(255,255,255,0.8); }
+
+.footer-social {
+  color: rgba(255,255,255,0.3);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  transition: color 0.2s;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.footer-social:hover { color: #C9A86C; }
+
+/* ── Prime section card (koyu zemin) ── */
+.prime-card {
+  position: relative;
+  padding: 32px;
+  transition: background-color 0.35s;
+}
+.prime-card:hover { background-color: rgba(201,168,108,0.04); }
+.prime-card-topline {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,108,0.55), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.prime-card:hover .prime-card-topline { opacity: 1; }
+
+/* ── Project card ── */
+.project-card { transition: transform 0.5s ease, box-shadow 0.5s ease; }
+.project-card:hover { box-shadow: 0 20px 50px rgba(0,0,0,0.07); transform: translateY(-4px); }
+.project-card-img { transition: transform 0.7s ease-out; }
+.project-card:hover .project-card-img { transform: scale(1.04); }
+
+/* ── Project info link ── */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(17,17,17,0.18);
+  color: #111111;
+  transition: color 0.3s, border-color 0.3s;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.project-link:hover { color: #C9A86C; border-bottom-color: rgba(201,168,108,0.5); }
+.project-link svg { transition: transform 0.3s; }
+.project-link:hover svg { transform: translateX(4px); }
+
+/* ── Animated entrance ── */
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.9s ease-out forwards;
+}
+.fade-up-d1 { animation-delay: 120ms; }
+.fade-up-d2 { animation-delay: 260ms; }
+.fade-up-d3 { animation-delay: 420ms; }
+
+/* ═══════════════════════════════════════════════════════════
+   Marka revizyonu 2026-06-16 — Hero / Servis / Ekip / İçgörü
+   ═══════════════════════════════════════════════════════════ */
+
+@keyframes heroGlowPulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.06); }
+}
+
+@keyframes heroAntlerIn {
+  from { opacity: 0; transform: translateY(18px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.hero-glow {
+  animation: heroGlowPulse 6s ease-in-out infinite;
+}
+
+.hero-antler {
+  animation: heroAntlerIn 1.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Buton — mat altın dolgu (yeni hero birincil CTA) ── */
+.btn-matte-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #C8A96A;
+  color: #0E0E0E;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  padding: 16px 36px;
+  transition: background-color 0.3s, transform 0.3s;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.btn-matte-gold:hover { background-color: #9C7A42; }
+
+/* ── Servis kartı — koyu zemin (Hizmet Alanlarımız) ── */
+.service-card {
+  position: relative;
+  padding: 40px 32px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: border-color 0.4s, background-color 0.4s;
+}
+.service-card:hover {
+  border-color: rgba(200,169,106,0.4);
+  background-color: rgba(200,169,106,0.03);
+}
+.service-card-arrow { transition: transform 0.3s, opacity 0.3s; opacity: 0.55; }
+.service-card:hover .service-card-arrow { transform: translateX(4px); opacity: 1; }
+
+/* ── İçgörü kartı ── */
+.insight-card-img { transition: transform 0.7s ease-out; }
+.insight-card:hover .insight-card-img { transform: scale(1.045); }
+.insight-card-link { transition: color 0.3s, border-color 0.3s; }
+.insight-card:hover .insight-card-link { color: #C8A96A; border-color: rgba(200,169,106,0.5); }
+
+/* ── Ekip kartı ── */
+.team-card-photo { transition: transform 0.6s ease-out, filter 0.6s ease-out; filter: grayscale(0.15); }
+.team-card:hover .team-card-photo { transform: scale(1.03); filter: grayscale(0); }
+
+/* ── Global ağ — ülke satırı ── */
+.country-row { transition: background-color 0.3s; border-top: 1px solid rgba(17,17,17,0.08); }
+.country-row:hover { background-color: rgba(200,169,106,0.04); }
+.country-dot { transition: background-color 0.3s, box-shadow 0.3s; }
+.country-row:hover .country-dot { background-color: #C8A96A; box-shadow: 0 0 0 4px rgba(200,169,106,0.18); }
+
+/* ── Partner cell — koyu zemin text-logo ── */
+.partner-cell:hover { background-color: rgba(200,169,106,0.04); }
+.partner-cell:hover .partner-cell-line { width: 40px !important; opacity: 0.9 !important; }
+
+/* ── Partner şerit (kompakt) ── */
+.partner-strip-item:hover { background-color: rgba(200,169,106,0.04); }
