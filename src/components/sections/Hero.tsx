@@ -156,20 +156,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Scroll ipucu ── */}
-      <div
-        className="absolute z-10 hidden lg:flex flex-col items-center"
-        style={{ bottom: 40, left: "50%", transform: "translateX(-50%)", gap: 14 }}
-        aria-hidden="true"
-      >
-        <span
-          className="font-sans font-medium uppercase"
-          style={{ color: "rgba(255,255,255,0.25)", fontSize: "8px", letterSpacing: "0.4em" }}
-        >
-          SCROLL
-        </span>
-        <div style={{ width: 1, height: 40, background: "linear-gradient(180deg, rgba(255,255,255,0.3), transparent)" }} />
-      </div>
     </section>
   )
 }
