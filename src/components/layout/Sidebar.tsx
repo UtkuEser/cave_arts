@@ -166,7 +166,7 @@ export default function Sidebar() {
           href="/iletisim"
           className="w-full flex items-center justify-center transition-opacity duration-200 hover:opacity-60"
           style={{ backgroundColor: "#EEF0F4", height: 148 }}
-          aria-label="Make an enquiry"
+          aria-label="Made in Türkiye"
         >
           <span
             className="font-sans font-medium uppercase select-none"
@@ -178,7 +178,7 @@ export default function Sidebar() {
               color: "#111111",
             }}
           >
-            MAKE AN ENQUIRY
+            MADE IN TÜRKİYE
           </span>
         </Link>
       </aside>
